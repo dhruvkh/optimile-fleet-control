@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { IconDashboard, IconTruck, IconUsers, IconMap, IconWrench, IconFuel, IconCircleDollar, IconTyre, IconGlobe, IconFile, IconZap, IconBell, IconChart, IconClipboardCheck, IconDatabase, IconBox, IconBriefcase, IconMechanic, IconMenu, IconX, IconBattery } from './Icons';
-
+import Logo from '../customer_logo.jpeg';
 export type Tab = 'dashboard' | 'live-map' | 'fleet' | 'drivers' | 'dispatch' | 'maintenance' | 'fuel' | 'cost' | 'compliance' | 'behavior' | 'tyres' | 'exceptions' | 'ops-intel' | 'coverage' | 'reconciliation' | 'inventory' | 'vendors' | 'garage' | 'batteries';
 
 interface LayoutProps {
@@ -82,12 +82,12 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, onNavigate 
     <div className="flex h-screen bg-gray-50 overflow-hidden">
       {/* Mobile Header */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-20 bg-white border-b border-gray-200 h-16 flex items-center px-4 justify-between shadow-sm">
-         <div className="flex items-center">
-              <div className="h-8 w-8 bg-primary-600 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-xl">O</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900">Optimile Fleet Control</span>
-         </div>
+   <div className="px-6 pt-4">
+        <div className="flex items-center justify-left">
+          <img src={Logo} alt="Optimile logo" className="object-cover" style={{ width: '80%', height: '100%' }} />
+        </div>
+        <p className="text-[10px] uppercase tracking-widest text-slate-500 mt-2 text-left">powered by Optimile</p>
+      </div>
          <button onClick={() => setIsMobileMenuOpen(true)} className="text-gray-500 hover:text-gray-700 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500">
              <IconMenu className="w-6 h-6" />
          </button>
@@ -127,12 +127,12 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, onNavigate 
       <div className="hidden md:flex md:flex-shrink-0">
         <div className="flex flex-col w-64">
           <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto bg-white border-r border-gray-200">
-            <div className="flex items-center flex-shrink-0 px-4 mb-5">
-              <div className="h-8 w-8 bg-primary-600 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-xl">O</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900">Optimile Fleet Control</span>
-            </div>
+               <div className="px-3  mb-5">
+        <div className="flex items-center justify-left">
+          <img src={Logo} alt="Optimile logo" className="object-cover" style={{ width: '80%', height: '100%' }} />
+        </div>
+        <p className="text-[10px]  tracking-widest text-slate-500 mt-2 text-left">Powered by Optimile</p>
+      </div>
             {renderNavLinks()}
             <UserProfile />
           </div>
