@@ -4,6 +4,7 @@ import { GarageAPI, GarageVisitAPI, GarageJobAPI, GaragePartAPI, GarageLabourAPI
 import { VehicleAPI, MaintenanceAPI } from '../services/mockDatabase';
 import { Button, Input, Select, Badge, Modal } from '../components/UI';
 import { IconMechanic, IconPlus, IconSearch, IconCheck, IconArrowRight, IconClock, IconTruck, IconWrench, IconBox, IconUsers, IconCircleDollar, IconFile, IconChart, IconAlert, IconShield, IconShieldExclamation } from '../components/Icons';
+import { log } from 'console';
 
 export const GaragePage: React.FC = () => {
     const [view, setView] = useState<'visits' | 'garages' | 'analytics'>('visits');
@@ -399,6 +400,8 @@ export const GaragePage: React.FC = () => {
             });
             loadData();
         } catch (error: any) {
+            console.log(error.message,"djkgzyukjsfiukdsgfhoidssjfi");
+            
             alert(error.message || "Failed to check in vehicle");
         } finally {
             setIsSubmitting(false);
